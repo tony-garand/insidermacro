@@ -6,7 +6,7 @@ class Navbar extends Component {
     return (
       <div className="navbar-fixed">
         <nav className="z-depth-0">
-          <div className="nav-wrapper white">
+          <div className="nav-wrapper black">
             <Link to="/">Home</Link>
             <Link to="/consumer">Consumer</Link>
             <Link to="/equities">Equities</Link>

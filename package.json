@@ -8,7 +8,7 @@
 		"client-install": "npm install --prefix client",
 		"start": "node server.js",
 		"server": "nodemon server.js",
-		"client": "npm run webpack-dev --prefix client",
+		"client": "npm start --prefix client",
 		"dev": "concurrently \"npm run server\" \"npm run client\""
 	},
 	"keywords": [
@@ -37,7 +37,6 @@
 		"validator": "^13.1.1"
 	},
 	"dependencies": {
-		"concurrently": "^5.2.0",
-		"node-sass": "^4.14.1"
+		"concurrently": "^5.2.0"
 	}
 }
