@@ -1,11 +1,20 @@
 import React from "react";
 import Header from "../layout/Header";
+import Tabs from "../layout/FeedTabs";
 
 function RealEstate(props) {
   return(
     <div>    
       <Header></Header>
-      <div>Real Estate</div>
+      <div className="row content">
+        <div className="col s8">
+          <h3>Real Estate</h3>
+        </div>
+        <div className="col s4">
+          <h3>Feed</h3>
+          <Tabs />
+        </div>
+      </div>
     </div>
   )
     

@@ -1,11 +1,26 @@
 import React from "react";
 import Header from "../layout/Header";
+import Tabs from "../layout/FeedTabs";
+import BarChart from "../data/BarChart";
+import Circles from "../data/Circles";
+import LineChart from "../data/LineChart";
 
 function Home(props) {
   return(
     <div>    
       <Header></Header>
-      <div>Home Page</div>
+      <div className="row content">
+        <div className="col s8">
+          <h3>Real Time Financial Markets</h3>
+          <BarChart />
+          <Circles />
+          <LineChart />
+        </div>
+        <div className="col s4">
+          <h3>Feed</h3>
+          <Tabs />
+        </div>
+      </div>
     </div>
   )
     
