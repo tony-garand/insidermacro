@@ -10,12 +10,16 @@ function Home(props) {
     <div>    
       <Header></Header>
       <div className="row content">
-        <div className="col s8">
+        <div className="col s7">
           <h3>Real Time Financial Markets</h3>
           <BarChart />
-          <Circles />
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <LineChart />
         </div>
+        <div className="col s1"></div>
         <div className="col s4">
           <h3>Feed</h3>
           <Tabs />
