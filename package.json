@@ -37,6 +37,7 @@
 		"validator": "^13.1.1"
 	},
 	"dependencies": {
-		"concurrently": "^5.2.0"
+		"concurrently": "^5.2.0",
+		"react-papaparse": "^3.4.0"
 	}
 }

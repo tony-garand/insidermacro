@@ -4,6 +4,11 @@
     margin: auto;
 }
 
+.green {
+    background-color: rgb(0, 128, 0) !important;
+
+}
+
 
 // Typography
 
@@ -145,5 +150,21 @@ g {
     text {
         font-size: 20px;
         font-weight: bold;
+    }
+}
+
+.chart__buttons {
+    padding: 20px 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    button {
+        margin: 0 20px;
+    }
+}
+
+.ReactChart {
+    svg {
+        overflow: visible !important;
     }
 }

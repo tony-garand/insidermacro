@@ -5,6 +5,8 @@ import useResizeObserver from "../functions/ResizeObserver";
 function BarChart() {
   const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75]);
   const svgRef = useRef();
+  let dataScale = Math.max.apply(Math, data);
+  let leftScale = (dataScale *= 1.25);
   const wrapperRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
 
@@ -21,7 +23,7 @@ function BarChart() {
       .padding(0.5);
 
     const yScale = scaleLinear()
-      .domain([0, 150])
+      .domain([0, leftScale])
       .range([dimensions.height, 0]);
 
     const colorScale = scaleLinear()
@@ -70,7 +72,7 @@ function BarChart() {
       .transition()
       .attr("fill", colorScale)
       .attr("height", value => dimensions.height - yScale(value));
-  }, [data, dimensions]);
+  }, [data, dimensions, leftScale]);
 
   return (
     <div>
@@ -80,18 +82,27 @@ function BarChart() {
             <g className="y-axis" />
             </svg>
         </div>
-        <br />
-        <button onClick={() => setData(data.map(value => value + 5))}>
-        Update data
-        </button>
-        <button onClick={() => setData(data.filter(value => value < 35))}>
-        Filter data
-        </button>
-        <button
-        onClick={() => setData([...data, Math.round(Math.random() * 100)])}
-        >
-        Add data
-        </button>
+        <div className="row chart__buttons"> 
+            <button 
+                className="btn btn-large green"
+                style={{width: '120px'}}
+                onClick={() => setData(data.map(value => value + 5))}>
+                Update
+            </button>
+            <button 
+                className="btn btn-large green"
+                style={{width: '120px'}}
+                onClick={() => setData(data.filter(value => value < 35))}>
+                Filter
+            </button>
+            <button
+                className="btn btn-large green"
+                style={{width: '120px', float: 'right'}}
+                onClick={() => setData([...data, Math.round(Math.random() * 100)])}
+                >
+                Add
+            </button>
+        </div>
     </div>
 
   );

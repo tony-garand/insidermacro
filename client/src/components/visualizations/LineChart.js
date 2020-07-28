@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { select, line, axisBottom, axisRight, scaleLinear, curveCardinal } from 'd3';
-import * as d3 from "d3";
+import { select, line, axisBottom, axisRight, scaleLinear } from 'd3';
 import useResizeObserver from "../functions/ResizeObserver";
 
 
@@ -40,11 +39,6 @@ export default function LineChart() {
             .style("transform", `translateX(${dimensions.width}px)`)
             .call(yAxis);
 
-        const colorScale = scaleLinear()
-            .domain([75, 100, 150])
-            .range(["green", "orange", "red"])
-            .clamp(true);
-        
         // black drop shadow
 
         var defs = svg.append("defs");
@@ -83,11 +77,7 @@ export default function LineChart() {
         .attr("stroke", "blue")
         .style("filter", "url(#drop-shadow)");
 
-        const tooltip = svg.append("g");
-
-
-
-    }, [data, dimensions]);
+    }, [data, dimensions, leftScale]);
 
     return (
         <div>
@@ -97,18 +87,27 @@ export default function LineChart() {
                     <g className="y-axis" />
                 </svg>
             </div>
-            <br />
-            <button onClick={() => setData(data.map(value => value + 5))}>
-            Update data
-            </button>
-            <button onClick={() => setData(data.filter(value => value <= 35))}>
-            Filter data
-            </button>
-            <button
-            onClick={() => setData([...data, Math.round(Math.random() * 100)])}
-            >
-            Add data
-            </button>
+            <div className="row chart__buttons"> 
+                <button 
+                    className="btn btn-large blue"
+                    style={{width: '120px'}}
+                    onClick={() => setData(data.map(value => value + 5))}>
+                    Update
+                </button>
+                <button
+                    className="btn btn-large blue"
+                    style={{width: '120px'}}
+                    onClick={() => setData(data.filter(value => value <= 35))}>
+                    Filter
+                </button>
+                <button
+                    className="btn btn-large blue"
+                    style={{width: '120px'}}
+                    onClick={() => setData([...data, Math.round(Math.random() * 100)])}
+                    >
+                    Add
+                </button>
+            </div>
         </div>
     )
 }

@@ -1,9 +1,15 @@
 import React from "react";
 import Header from "../layout/Header";
 import Tabs from "../layout/FeedTabs";
-import BarChart from "../data/BarChart";
-import Circles from "../data/Circles";
-import LineChart from "../data/LineChart";
+import BarChart from "../visualizations/BarChart";
+import Circles from "../visualizations/Circles";
+import LineChart from "../visualizations/LineChart";
+import StockChart from "../visualizations/StockChart";
+import ReactChart from "../visualizations/ReactChart";
+import SyncChart from "../visualizations/SyncChart";
+import RadialBar from "../visualizations/RadialBar";
+import SunburstChart from "../visualizations/SunburstChart";
+import MultiBarChart from "../visualizations/MultiBarChart";
 
 function Home(props) {
   return(
@@ -18,6 +24,21 @@ function Home(props) {
           <br/>
           <br/>
           <LineChart />
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <ReactChart />
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <SyncChart />
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <MultiBarChart />
         </div>
         <div className="col s1"></div>
         <div className="col s4">
